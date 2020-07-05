@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,7 +8,8 @@ namespace Advantage.API.Models
 {
     public class Order
     {
-        public int Id;
+        [Key]
+        public int Id { get; set; }
         public Customer Customer { get; set; }
         public decimal Total { get; set; }
         public DateTime Placed { get; set; }
