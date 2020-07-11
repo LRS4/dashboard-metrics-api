@@ -72,7 +72,7 @@ namespace Advantage.API.Controllers
             return Ok(groupedResult);
         }
 
-        [HttpGet("ByCustomer")]
+        [HttpGet("ByCustomer/{numberOfCustomers}")]
         public IActionResult ByCustomer(int numberOfCustomers)
         {
             var orders = _context.Orders.Include(o => o.Customer).ToList();
@@ -92,7 +92,7 @@ namespace Advantage.API.Controllers
             return Ok(groupedResult);
         }
 
-        [HttpGet("GetOrder/{}", Name = "GetOrder")]
+        [HttpGet("GetOrder/{id}", Name = "GetOrder")]
         public IActionResult GetOrder(int id)
         {
             var order =_context.Orders.Include(o => o.Customer).FirstOrDefault(o => o.Id == id);
