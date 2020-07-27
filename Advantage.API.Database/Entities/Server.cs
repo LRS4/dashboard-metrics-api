@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Advantage.API.Models
+namespace Advantage.API.Database.Entities
 {
-    public class Customer
+    public class Server
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
-        public string State { get; set; }
+        public bool IsOnline { get; set; }
     }
 }

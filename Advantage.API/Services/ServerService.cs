@@ -1,4 +1,5 @@
-﻿using Advantage.API.Models;
+﻿using Advantage.API.Database.Entities;
+using Advantage.API.Models;
 using Advantage.API.Services.Interfaces;
 using System;
 using System.Collections.Generic;

@@ -1,0 +1,12 @@
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\bin\Debug\netcoreapp3.1\Advantage.API.Database.deps.json
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\bin\Debug\netcoreapp3.1\Advantage.API.Database.dll
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\obj\Debug\netcoreapp3.1\Advantage.API.Database.csprojAssemblyReference.cache
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\obj\Debug\netcoreapp3.1\Advantage.API.Database.AssemblyInfoInputs.cache
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\obj\Debug\netcoreapp3.1\Advantage.API.Database.AssemblyInfo.cs
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\bin\Debug\netcoreapp3.1\Advantage.API.Database.runtimeconfig.json
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\bin\Debug\netcoreapp3.1\Advantage.API.Database.runtimeconfig.dev.json
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\obj\Debug\netcoreapp3.1\Advantage.API.Database.genruntimeconfig.cache
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\obj\Debug\netcoreapp3.1\Advantage.API.Database.csproj.CoreCompileInputs.cache
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\bin\Debug\netcoreapp3.1\Advantage.API.Database.pdb
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\obj\Debug\netcoreapp3.1\Advantage.API.Database.dll
+C:\Users\L.Spencer\Documents\GitHub\Advantage.API\Advantage.API.Database\obj\Debug\netcoreapp3.1\Advantage.API.Database.pdb

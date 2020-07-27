@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Advantage.API.Models
+namespace Advantage.API.Database.Entities
 {
     public class Order
     {
