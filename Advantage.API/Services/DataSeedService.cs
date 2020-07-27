@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Advantage.API
 {
-    public class Helpers
+    public class DataSeedService
     {
         private static Random _rand = new Random();
 

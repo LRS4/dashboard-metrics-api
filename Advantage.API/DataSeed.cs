@@ -81,15 +81,15 @@ namespace Advantage.API
 
             for (var i = 1; i <= nCustomers; i++)
             {
-                var name = Helpers.MakeUniqueCustomerName(names);
+                var name = DataSeedService.MakeUniqueCustomerName(names);
                 names.Add(name);
 
                 customers.Add(new Customer
                 {
                     Id = i,
                     Name = name,
-                    Email = Helpers.MakeCustomerEmail(name),
-                    State = Helpers.GetRandomState()
+                    Email = DataSeedService.MakeCustomerEmail(name),
+                    State = DataSeedService.GetRandomState()
                 });
             }
 
@@ -104,14 +104,14 @@ namespace Advantage.API
             for (var i = 1; i <= nOrders; i++)
             {
                 var randCustomerId = rand.Next(1, _context.Customers.Count());
-                var placed = Helpers.GetRandomOrderPlaced();
-                var completed = Helpers.GetRandomOrderCompleted(placed);
+                var placed = DataSeedService.GetRandomOrderPlaced();
+                var completed = DataSeedService.GetRandomOrderCompleted(placed);
 
                 orders.Add(new Order
                 {
                     Id = i,
                     Customer = _context.Customers.First(c => c.Id == randCustomerId),
-                    Total = Helpers.GetRandomOrderTotal(),
+                    Total = DataSeedService.GetRandomOrderTotal(),
                     Placed = placed,
                     Completed = completed
                 });
