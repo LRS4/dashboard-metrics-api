@@ -9,6 +9,7 @@ using Advantage.API.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +47,14 @@ namespace Advantage.API
 
             services.AddDbContext<ApiContext>(
                 options => options.UseNpgsql(_connectionString));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => 
+            {
+                options.Password.RequiredLength = 5;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<ApiContext>();
 
             services.AddScoped<IServerService, ServerService>();
 
