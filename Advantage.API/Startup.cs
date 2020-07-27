@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Advantage.API.Models;
+using Advantage.API.Services;
+using Advantage.API.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -43,6 +45,8 @@ namespace Advantage.API
 
             services.AddDbContext<ApiContext>(
                 options => options.UseNpgsql(_connectionString));
+
+            services.AddScoped<IServerService, ServerService>();
 
             services.AddTransient<DataSeed>();
         }
