@@ -11,6 +11,7 @@ using Advantage.API.Models.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -54,6 +55,7 @@ namespace Advantage.API.Controllers
             };
 
             var result = await _userManager.CreateAsync(applicationUser, newUser.Password);
+            await _userManager.AddToRoleAsync(applicationUser, (newUser.IsAdmin) ? "Admin" : "Customer");
             return Ok(result);
         }
 
@@ -66,11 +68,15 @@ namespace Advantage.API.Controllers
             var passwordIsValid = await _userManager.CheckPasswordAsync(user, model.Password);
             if (user != null && passwordIsValid)
             {
+                var userRole = await _userManager.GetRolesAsync(user);
+                IdentityOptions _options = new IdentityOptions();
+
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[] 
                     { 
-                        new Claim("UserId", user.Id.ToString())
+                        new Claim("UserId", user.Id.ToString()),
+                        new Claim(_options.ClaimsIdentity.RoleClaimType, userRole.FirstOrDefault())
                     }),
                     Expires = DateTime.UtcNow.AddMinutes(30),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(

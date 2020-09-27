@@ -41,6 +41,31 @@ namespace Advantage.API.Controllers
                 user.UserName
             };
         }
+
+        // GET api/userprofile/admin
+        [HttpGet]
+        [Authorize(Roles="Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("ForAdmin")]
+        public string GetForAdmin()
+        {
+            return "Web method for Admin role";
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Customer", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("ForCustomer")]
+        public string GetForCustomer()
+        {
+            return "Web method for Customer role";
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin, Customer", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("ForAdminOrCustomer")]
+        public string GetForAdminOrCustomer()
+        {
+            return "Web method for Admin or Customer role";
+        }
         #endregion
     }
 }
