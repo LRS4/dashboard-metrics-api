@@ -33,12 +33,14 @@ namespace Advantage.API.Controllers
         {
             string userId = User.Claims.First(c => c.Type == "UserId").Value;
             var user = await _userManager.FindByIdAsync(userId);
+            var roles = await _userManager.GetRolesAsync(user);
             return new
             {
                 user.FirstName,
                 user.LastName,
                 user.Email,
-                user.UserName
+                user.UserName,
+                Roles = roles
             };
         }
 
